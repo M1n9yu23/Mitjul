@@ -1,0 +1,18 @@
+<resources>
+    <string name="stats_title">%1$d년</string>
+    <string name="stats_books">%1$d권</string>
+    <string name="stats_pages">%1$,d쪽</string>
+    <string name="stats_record_days">기록한 날</string>
+    <string name="stats_record_days_description">%1$d년에 기록을 남긴 날 %2$d일</string>
+    <string name="stats_monthly_books">달마다 다 읽은 책</string>
+    <string name="stats_month_books">%1$d월 %2$d권</string>
+    <string name="stats_first_month">1월</string>
+    <string name="stats_last_month">12월</string>
+    <string name="stats_loading">통계를 계산하는 중</string>
+    <string name="stats_empty_title">올해 남긴 기록이 없습니다</string>
+    <string name="stats_empty_description">책을 다 읽거나 문장을 남기면 여기에 쌓입니다.</string>
+    <string name="stats_error_title">통계를 계산하지 못했습니다</string>
+    <string name="stats_error_description">이 기기에 저장된 기록을 읽지 못했습니다.</string>
+    <string name="stats_back">서재로 돌아가기</string>
+    <string name="stats_refresh_failed">새 기록을 받지 못해 이 기기에 저장된 기록으로 계산합니다.</string>
+</resources>

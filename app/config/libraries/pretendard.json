@@ -1,0 +1,9 @@
+{
+  "uniqueId": "font:pretendard",
+  "artifactVersion": "1.3.9",
+  "name": "Pretendard",
+  "description": "밑줄의 고딕 글꼴",
+  "website": "https://github.com/orioncactus/pretendard",
+  "developers": [{ "name": "Kil Hyung-jin" }],
+  "licenses": ["OFL-1.1"]
+}

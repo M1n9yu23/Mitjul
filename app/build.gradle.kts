@@ -1,54 +1,58 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.compose)
-}
-
-android {
-    namespace = "com.gyugle.mitjul"
-    compileSdk {
-        version = release(37)
-    }
-
-    defaultConfig {
-        applicationId = "com.gyugle.mitjul"
-        minSdk = 26
-        targetSdk = 37
-        versionCode = 1
-        versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            optimization {
-                enable = false
-            }
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    buildFeatures {
-        compose = true
-    }
+    alias(libs.plugins.convention.android.application.compose)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.aboutlibraries.android)
 }
 
 dependencies {
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.graphics)
-    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(project(":core:database"))
+    implementation(project(":core:datastore"))
+    implementation(project(":core:designsystem"))
+    implementation(project(":core:logging"))
+    implementation(project(":core:ml"))
+    implementation(project(":core:navigation"))
+    implementation(project(":core:network"))
+    implementation(project(":core:presentation"))
+    implementation(project(":core:session"))
+    implementation(project(":feature:auth:data"))
+    implementation(project(":feature:auth:domain"))
+    implementation(project(":feature:auth:navigation"))
+    implementation(project(":feature:auth:presentation"))
+    implementation(project(":feature:library:data"))
+    implementation(project(":feature:library:domain"))
+    implementation(project(":feature:library:navigation"))
+    implementation(project(":feature:library:presentation"))
+    implementation(project(":feature:quote:data"))
+    implementation(project(":feature:quote:domain"))
+    implementation(project(":feature:quote:navigation"))
+    implementation(project(":feature:quote:presentation"))
+    implementation(project(":feature:settings:data"))
+    implementation(project(":feature:settings:domain"))
+    implementation(project(":feature:settings:navigation"))
+    implementation(project(":feature:settings:presentation"))
+    implementation(project(":feature:stats:data"))
+    implementation(project(":feature:stats:domain"))
+    implementation(project(":feature:stats:navigation"))
+    implementation(project(":feature:stats:presentation"))
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.workmanager)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    testImplementation(libs.junit)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.androidx.junit)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
-    debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.ktor3)
+    implementation(libs.aboutlibraries.compose.m3)
+    testImplementation(testFixtures(project(":feature:auth:domain")))
+    testImplementation(testFixtures(project(":feature:library:domain")))
+    testImplementation(testFixtures(project(":feature:quote:domain")))
+    testImplementation(libs.kotlinx.coroutines.test)
+}
+
+aboutLibraries {
+    collect {
+        configPath = file("config")
+    }
 }

@@ -1,0 +1,8 @@
+{
+  "uniqueId": "font:nanum-myeongjo",
+  "name": "나눔명조",
+  "description": "밑줄의 명조 글꼴",
+  "website": "https://hangeul.naver.com/font",
+  "developers": [{ "name": "NAVER" }],
+  "licenses": ["OFL-1.1"]
+}

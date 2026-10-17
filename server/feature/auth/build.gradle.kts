@@ -1,0 +1,16 @@
+plugins {
+    alias(libs.plugins.convention.jvm.library)
+    alias(libs.plugins.kotlin.serialization)
+}
+
+dependencies {
+    implementation(project(":server:core:database"))
+    implementation(project(":server:core:domain"))
+    implementation(project(":server:core:security"))
+    implementation(libs.ktor.server.core)
+    implementation(libs.ktor.server.resources)
+    implementation(libs.ktor.server.routing.openapi)
+    implementation(libs.ktor.server.auth.jwt)
+    implementation(libs.koin.core)
+    implementation(libs.bundles.exposed)
+}
